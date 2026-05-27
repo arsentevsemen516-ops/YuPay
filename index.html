@@ -799,8 +799,8 @@ let isSupabaseReady = false;
 function initSupabase() {
   if (sb) return isSupabaseReady; // уже инициализирован
   try {
-    if (SUPABASE_URL.includes('ВСТАВЬ') || SUPABASE_KEY.includes('ВСТАВЬ')) {
-      console.warn('Supabase не настроен — работаем в режиме localStorage');
+    if (!SUPABASE_URL || !SUPABASE_KEY || SUPABASE_URL.length < 10) {
+      console.warn('Supabase не настроен');
       return false;
     }
     sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
