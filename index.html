@@ -797,7 +797,7 @@ let isSupabaseReady = false;
 function initSupabase() {
   if (sb) return isSupabaseReady; // уже инициализирован
   try {
-    if (SUPABASE_URL.includes('ВСТАВЬ') || SUPABASE_KEY.includes('ВСТАВЬ')) {
+    if (SUPABASE_URL.includes(''https://zcebyyzorjwnlyrafdbl.supabase.co') || SUPABASE_KEY.includes('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpjZWJ5eXpvcmp3bmx5cmFmZGJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5NDk2MzYsImV4cCI6MjA5NDUyNTYzNn0.sQC09imix74it7rWMhO0rCpSk5dYr-iDQJFcSDEURvQ')) {
       console.warn('Supabase не настроен — работаем в режиме localStorage');
       return false;
     }
