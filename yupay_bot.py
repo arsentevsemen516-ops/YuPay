@@ -13,7 +13,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ Комиссия: *0%*\n"
         "💰 Сумма: *300¥ – 10.000¥*\n"
         "🕐 Работаем: *08:00 – 23:00*\n\n"
-        "Нажмите кнопку ниже для обмена 👇"
+        "Нажмите Exchange для обмена 👇"
     )
     keyboard = [[InlineKeyboardButton("💸 Exchange", callback_data="exchange")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
