@@ -1,6 +1,6 @@
 import os
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
@@ -13,20 +13,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ Комиссия: *0%*\n"
         "💰 Сумма: *300¥ – 10.000¥*\n"
         "🕐 Работаем: *08:00 – 23:00*\n\n"
-        "Нажмите Exchange для обмена 👇"
+        "Нажмите «Exchange» для обмена"
     )
-    keyboard = [[InlineKeyboardButton("💸 Exchange", callback_data="exchange")]]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text(text, parse_mode="Markdown", reply_markup=reply_markup)
-
-async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
+    await update.message.reply_text(text, parse_mode="Markdown")
 
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CallbackQueryHandler(button_handler))
     print("Бот запущен...")
     app.run_polling()
 
