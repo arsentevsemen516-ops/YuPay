@@ -7,7 +7,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
         "👋 Добро пожаловать в *YuPay*!\n\n"
-        "💱 *1 CNY* = 11.6 RUB\n"
+        "💱 *1 CNY* = 11.93 RUB\n"
         "💵 *1 USD* = 6.42 CNY\n"
         "➖➖➖➖➖➖➖➖➖➖\n"
         "✅ Комиссия: *0%*\n"
